@@ -1,0 +1,14 @@
+
+public class Human extends Animal{
+	
+	String job = "student";
+	
+	public void chibbo(String job) {
+		this.job = job;
+	}
+	
+	public static void main(String[] args) {
+		Human hum = new Human();
+		System.out.println();
+	}
+}
