@@ -8,6 +8,7 @@ class Vehicle {
 		this.speed++;
 	}
 }
+module.exports = Vehicle;
 
 if(require.main === module) {
 	
