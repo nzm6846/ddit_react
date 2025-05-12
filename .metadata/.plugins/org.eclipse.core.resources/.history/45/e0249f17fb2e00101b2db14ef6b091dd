@@ -7,8 +7,9 @@ class Human extends Animal{
 			this.job = job;
 	  }
 }
+	moudule.exports = human;
 
-
+if(require.main === module) {
 	const hum = new Human();
 	console.log("x: " + hum.x);
 	console.log("y: " + hum.y);
@@ -20,3 +21,4 @@ class Human extends Animal{
 	console.log(hum.x);
 	console.log(hum.y);
 	console.log(hum.job);
+}

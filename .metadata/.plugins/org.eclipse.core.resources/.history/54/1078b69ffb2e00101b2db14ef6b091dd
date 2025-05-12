@@ -1,5 +1,8 @@
+const Animal = require('./ooptest.js');
+
 class Human extends Animal{
 	constructor() {
+		super();
 		this.job="student";
 	  }
 	
@@ -8,13 +11,12 @@ class Human extends Animal{
 	  }
 }
 
-
 	const hum = new Human();
 	console.log("x: " + hum.x);
 	console.log("y: " + hum.y);
 	console.log(hum.job);
 	
-	ani.move(100, 50);
+	hum.move(100, 50);
 	hum.chibbo("programer");
 	
 	console.log(hum.x);

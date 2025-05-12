@@ -7,8 +7,6 @@ class Human extends Animal{
 			this.job = job;
 	  }
 }
-
-
 	const hum = new Human();
 	console.log("x: " + hum.x);
 	console.log("y: " + hum.y);

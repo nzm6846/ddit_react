@@ -8,7 +8,6 @@ class Human extends Animal{
 	  }
 }
 
-
 	const hum = new Human();
 	console.log("x: " + hum.x);
 	console.log("y: " + hum.y);

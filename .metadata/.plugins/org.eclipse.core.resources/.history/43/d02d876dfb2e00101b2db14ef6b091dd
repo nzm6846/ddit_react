@@ -1,0 +1,16 @@
+// main.js
+const Human = require('./human.js');
+
+if (require.main === module) {
+  const hum = new Human();
+  console.log(hum.x);        // 0
+  console.log(hum.y);        // 0
+  console.log(hum.job);      // student
+
+  hum.move(100, 50);
+  hum.changeJob("programmer");
+
+  console.log(hum.x);        // 100
+  console.log(hum.y);        // 50
+  console.log(hum.job);      // programmer
+}

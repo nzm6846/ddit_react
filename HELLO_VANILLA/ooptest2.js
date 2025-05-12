@@ -1,0 +1,26 @@
+const Animal = require('./ooptest.js');
+
+class Human extends Animal{
+	constructor() {
+		super();
+		this.job = "student";
+	}
+	
+	chibbo(job){
+		this.job = job;
+	}
+}
+
+if(require.main === module) {
+	const hum = new Human();
+	console.log("x: " + hum.x);
+	console.log("y: " + hum.y);
+	console.log(hum.job);
+	
+	hum.move(5, 5);
+	hum.chibbo("programer");
+	
+	console.log("x: " + hum.x);
+	console.log("y: " + hum.y);
+	console.log(hum.job);
+}
