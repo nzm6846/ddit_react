@@ -1,17 +1,5 @@
 const Animal = require('./ooptest.js');
-
-class Human extends Animal{
-	constructor() {
-		super();
-		this.job = "student";
-	}
-	
-	chibbo(job){
-		this.job = job;
-	}
-}
-
-module.exports = Human;
+const Human = require('./ooptest2.js');
 
 if(require.main === module) {
 	const hum = new Human();

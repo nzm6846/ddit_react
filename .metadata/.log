@@ -9048,3 +9048,6 @@ org.eclipse.swt.SWTException: 정의되지 않음 또는 null 참조인 'marginB
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:651)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:588)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1459)
+
+!ENTRY org.eclipse.lsp4e 1 0 2025-05-12 15:40:24.018
+!MESSAGE [Info]	ESLint server running in node v18.18.2

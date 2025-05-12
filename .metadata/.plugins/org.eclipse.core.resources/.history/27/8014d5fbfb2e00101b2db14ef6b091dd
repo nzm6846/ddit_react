@@ -11,8 +11,6 @@ class Human extends Animal{
 	}
 }
 
-module.exports = Human;
-
 if(require.main === module) {
 	const hum = new Human();
 	console.log("x: " + hum.x);
