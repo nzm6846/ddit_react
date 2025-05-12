@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it{
+	width:30px;
+}
+</style>
+<script type="text/javascript">
+function myclick(){
+	
+	obj_span = document.getElementsByClassName('myspan');
+	arr = [];
+	while(arr.length <6){
+		random = Math.floor(Math.random()*45+1);
+
+		if(!arr.includes(random)){
+
+			arr.push(random);
+			console.log(arr);
+
+		}
+		
+	}
+		
+	console.log(obj_span);
+	for (let i = 0; i < obj_span.length; i++) {
+		obj_span[i].innerHTML = arr[i];
+	}
+};
+</script>
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td><span class="myspan">__</span></td>
+			<td><span class="myspan">__</span></td>
+			<td><span class="myspan">__</span></td>
+			<td><span class="myspan">__</span></td>
+			<td><span class="myspan">__</span></td>
+			<td><span class="myspan">__</span></td>
+		</tr>
+		<tr>
+			<td colspan="6">
+				<button onclick='myclick()'>로또생성하기</button>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+document.addEventListener('DOMContentLoaded', function() {
+    
+	var obj_span = document.getElementById('myspan');
+	
+	var obj_btn = document.querySelector('button');
+	
+	obj_btn.addEventListener('click',()=>{
+		console.log("asd")
+		obj_span.textContent  ='GoodEvening'
+	})
+});
+</script>
+</head>
+<body>
+	<span id="myspan">GoodMorning</span>
+	<button>CLICK</button>
+</body>
+</html>

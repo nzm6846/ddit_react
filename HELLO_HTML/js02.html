@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it{
+	width:30px;
+}
+</style>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function() {
+    
+	var obj_it = document.getElementById('it');
+	var obj_btn = document.querySelector('button');
+	
+	obj_btn.addEventListener('click',()=>{
+		console.log("asd")
+		obj_it.value = parseInt(obj_it.value)+1;
+	})
+	
+});
+</script>
+</head>
+<body>
+<input type="text" id="it" value="100">
+<button>INCREASE</button>
+</body>
+</html>

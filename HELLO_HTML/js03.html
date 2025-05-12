@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it {
+	width: 30px;
+}
+</style>
+<script type="text/javascript">
+	function myclick() {
+		var obj_it = document.getElementById('it');
+		var obj_ta = document.getElementById('ta');
+		console.log(obj_it.value);
+		code ="";
+		obj_ta.value=code;
+		for(var i =1; i<=9; i++){
+			
+			code += parseInt(obj_it.value) * i +"\n";
+		}
+		
+		
+		obj_ta.value = code;
+
+	};
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>출력단수</td>
+			<td><input type="text" id="it"></td>
+		</tr>
+		<tr>
+			<td colspan="2"><input type="button" value="출력하기"
+				onclick='myclick()'></td>
+		</tr>
+		<tr>
+			<td colspan="2"><textarea id="ta" rows="13" cols="17"></textarea>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
