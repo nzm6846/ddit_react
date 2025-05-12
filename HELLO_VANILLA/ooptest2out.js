@@ -1,4 +1,4 @@
-const Animal = require('./ooptest.js');
+
 const Human = require('./ooptest2.js');
 
 if(require.main === module) {
