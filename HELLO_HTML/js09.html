@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#it_first,#it_last{
+		width: 50px;
+	}
+	#mydiv{
+		height: 150px;
+	}
+</style>
+<script type="text/javascript">
+	function myclick() {
+		obj_it_first = document.getElementById('it_first');
+		obj_it_last = document.getElementById('it_last');
+		obj_mydiv = document.getElementById('mydiv');
+		
+		it_first = obj_it_first.value;
+		it_last = obj_it_last.value;
+		
+		
+		console.log(it_first);
+		console.log(it_last);
+		code="";
+		for(let i=it_first-1; i<it_last; i++){
+			
+			for(let j=0; j<=i; j++){
+				code+='*';
+			}
+				code+="<br>";
+		}
+				obj_mydiv.innerHTML += code;
+		
+	}
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>첫별수</td>
+			<td>
+				<input type="text" id="it_first">
+			</td>
+		</tr>
+		<tr>
+			<td>끝별수</td>
+			<td>
+				<input type="text" id="it_last">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<button onclick="myclick()">별출력하시오</button>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<div id="mydiv"></div>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

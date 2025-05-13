@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+	#it{
+		width: 100px;
+	}
+	.btn{
+		width: 32px;
+	}
+	#btn_call{
+		width: 60px
+	}
+	
+</style>
+<script type="text/javascript">
+
+document.addEventListener('DOMContentLoaded', function() {
+	objs = document.getElementsByClassName('btn');
+	obj_btn = document.getElementById('btn_call');
+	
+	code="";
+
+	for(obj of objs){
+		obj.addEventListener('click',function(){
+
+			code+=this.value;
+			console.log(code);
+		})
+	}
+	
+	obj_btn.addEventListener('click',function(){
+		alert(code + "전화거는중")
+		code="";
+	})
+	
+	
+});
+</script>
+</head>
+<body>
+	<table border="1px">
+		<tr>
+			<td colspan="3">
+				<input type="text" id="it">
+			</td>
+		</tr>
+		<tr>
+			<td> <input type="button" value="1" class="btn"></td>
+			<td> <input type="button" value="2" class="btn"></td>
+			<td> <input type="button" value="3" class="btn"></td>
+		</tr>
+		<tr>
+			<td> <input type="button" value="4" class="btn"></td>
+			<td> <input type="button" value="5" class="btn"></td>
+			<td> <input type="button" value="6" class="btn"></td>
+		</tr>
+		<tr>
+			<td> <input type="button" value="7" class="btn"></td>
+			<td> <input type="button" value="8" class="btn"></td>
+			<td> <input type="button" value="9" class="btn"></td>
+		</tr>
+		<tr>
+			<td> <input type="button" value="0" class="btn"></td>
+			<td colspan="2">
+			 <input type="button" value="☏" id="btn_call">
+		 	</td>
+
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.its{
+		width: 30px;
+	}
+</style>
+<script type="text/javascript">
+	function myclick() {
+		var obj_its = document.getElementsByClassName('its');
+		
+		console.log(obj_its);
+		
+		/* result = parseInt(obj_its[0].value) *parseInt(obj_its[1].value) */;
+		
+		res=1;
+		for(let i=0; i<obj_its.length; i++){
+			
+			if(i==obj_its.length-1){
+				obj_its[i].value=res;
+				break;
+			}
+			res*=parseInt(obj_its[i].value);
+		}
+		
+		/* obj_its[2].value = result; */
+	}
+</script>
+</head>
+<body>
+	<input type="text" class="its">
+	*
+	<input type="text" class="its">
+	<button onclick="myclick()">=</button>
+	<input type="text" class="its">
+</body>
+</html>
