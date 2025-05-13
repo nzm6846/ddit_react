@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
+<script type="text/javascript">
+	const myclick = () => {
+	    $('#myspan').html("GoodEvening");
+	};
+	$(document).ready(function(){
+		$('#btn').on("click",function(){
+			myclick();
+			console.log("버튼 눌림");
+		})
+	})
+
+</script>
+</head>
+<body>
+	<span id="myspan">GoodMorning</span>
+	<button id="btn">CLICK</button>
+</body>
+</html>
