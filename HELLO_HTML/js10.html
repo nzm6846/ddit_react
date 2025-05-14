@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#it{
+		width: 40px;
+	}
+	#mydiv{
+		height: 170px;
+	}
+</style>
+<script type="text/javascript">
+
+	arr =[];
+	while(arr.length <3){
+		random = parseInt(Math.random()*10);
+		if(!arr.includes(random)){
+			arr.push(random);
+
+		}
+		
+	function myclick() {
+			var myarr =[];
+			code ="";
+			var obj_mydiv =document.getElementById('mydiv');
+			//arr 에 맞출 수 들어가있음
+			var obj_it = document.getElementById('it');
+			var it = obj_it.value;
+			console.log("정답:" + arr);
+			
+			var it100 = parseInt(it/100);		//내숫자 100자리
+			var it10  = parseInt((it%100)/10);	//내숫자 10자리
+			var it1   = parseInt((it%100)%10);	//내숫자 1자리
+			
+			
+			//myarr 내 숫자 배열코드
+			myarr.push(it100);
+			myarr.push(it10);
+			myarr.push(it1);
+			
+			var scnt=0; //스트라이크갯수
+			var bcnt=0; //볼갯수
+			
+			for(var i=0; i<3; i++){
+				for(var j=0; j<3; j++){
+					
+					if(i==j){//자리가 같을때 수가 같으면 
+						if(arr[i]==myarr[j]){
+							scnt++;
+						}
+					}else{//자리는 다른데 수가 같으면
+						if(arr[i]==myarr[j]){
+							bcnt++;
+						}
+					}
+					
+				}
+				
+			}
+			
+			code+=scnt+"s"+bcnt+"b\n";
+			
+			
+			if(scnt >2){
+				alert("정답");
+			}
+
+			
+			obj_mydiv.innerHTML+= code;
+			
+
+		}
+		
+	}
+</script>
+</head>
+<body>
+	<table border="1">
+		<tr>
+			<td>맞출수</td>
+			<td>
+				<input type="text" id="it">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="button" value="맞춰보기" onclick="myclick()">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<textarea id="mydiv" rows="4" cols="13"></textarea>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
