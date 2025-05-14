@@ -12,6 +12,16 @@
 	}
 </style>
 <script type="text/javascript">
+	function star(num){
+		var ret = "";
+		for(var i=0; i<num; i++){
+			ret+="*";
+		}
+		ret+="<br/>";
+		return ret;
+	}
+
+
 	function myclick() {
 		obj_it_first = document.getElementById('it_first');
 		obj_it_last = document.getElementById('it_last');
@@ -20,18 +30,25 @@
 		it_first = obj_it_first.value;
 		it_last = obj_it_last.value;
 		
-		
-		console.log(it_first);
-		console.log(it_last);
+		var f = parseInt(it_first);
+		var l = parseInt(it_last);
+
 		code="";
-		for(let i=it_first-1; i<it_last; i++){
+		
+		for(var i=f; i<=l; i++){
+			code+=star(i);
+		}
+
+		
+/* 		for(let i=it_first-1; i<it_last; i++){
 			
 			for(let j=0; j<=i; j++){
 				code+='*';
 			}
 				code+="<br>";
-		}
-				obj_mydiv.innerHTML += code;
+		} */
+		
+		obj_mydiv.innerHTML = code;
 		
 	}
 </script>

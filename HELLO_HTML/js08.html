@@ -7,6 +7,7 @@
 
 	#it{
 		width: 100px;
+		text-align: right;
 	}
 	.btn{
 		width: 32px;
@@ -21,6 +22,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 	objs = document.getElementsByClassName('btn');
 	obj_btn = document.getElementById('btn_call');
+	obj_it = document.getElementById('it');
 	
 	code="";
 
@@ -28,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		obj.addEventListener('click',function(){
 
 			code+=this.value;
-			console.log(code);
+			
+			obj_it.value=code;
 		})
 	}
 	
