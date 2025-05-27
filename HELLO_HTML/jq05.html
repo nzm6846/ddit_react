@@ -3,44 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style type="text/css">
-	.its{
-		width: 30px;
-	}
+.its{
+	width: 30px;
+}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-	function myclick() {
-		var obj_its = $('.its');
-		
-		
-		res=1;
-		for(let i=0; i<obj_its.length; i++){
-			
-			if(i==obj_its.length-1){
-				$(obj_its[i]).val(res);
-				break;
-			}
-			var val = $(obj_its[i]).val();
-			console.log()
-			res*=parseInt(val);
-		}
-		
-
-	}
+function myclick(){
+	var a = $(".its").eq(0).val(); 
+	var b = $(".its").eq(1).val(); 
 	
-	$(document).ready(function(){
-		$('#btn').on("click",function(){
-			myclick();
-		})
-	})
+	var aa = parseInt(a);
+	var bb = parseInt(b);
+	
+	var mul = aa*bb;
+	
+	$(".its").eq(2).val(mul); 	
+	
+}
+$(document).ready(function(){
+	$("#btn").on("click", function(event) {  
+		myclick();
+	});
+});
 </script>
 </head>
 <body>
-	<input type="text" class="its">
-	*
-	<input type="text" class="its">
-	<button id="btn">=</button>
-	<input type="text" class="its">
+<input type="text" class="its" />
+*
+<input type="text" class="its" />
+<button id="btn">=</button>
+<input type="text" class="its" />
 </body>
 </html>

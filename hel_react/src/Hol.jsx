@@ -14,21 +14,16 @@ const myClick = () =>{
     let ran = Math.floor(Math.random()*2);
 
 
-    console.log("com :",com);
-
     setCom(arr[ran]);
 
-    let a =com;
-    console.log("a",a);
 
-    console.log("com",com);
 
     if(arr[ran]===mine) {
         setRes("정답");
     }else{
         setRes("오답");
     }
-    console.log(res);
+
 }
 
     return (

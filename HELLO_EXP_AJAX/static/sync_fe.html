@@ -4,25 +4,31 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-async function fn_ajax(){
+
+async function fn_ajax() {
+	let a = 0;
+	let b = 0;
+	let c = 0;
 	
-	let r1 = await fetch('/one.ajax');
-	let data1 = await r1.json();
-	a = data1.cnt;
+	var response = await fetch('/one.ajax');
+	var data = await response.json();
+	a = data.cnt;
 	console.log("a",a);
 	
-	let r2 = await fetch('/two.ajax');
-	let data2 = await r2.json();
-	b = data2.cnt;
+	var response = await fetch('/two.ajax');
+	var data = await response.json();
+	b = data.cnt;
 	console.log("b",b);
 	
-	c = a+b;
+	c = a + b;
+	
 	console.log("c",c);
 }
 </script>
 </head>
 <body>
-	AJAX FE<br>
+	AJAX AXIOS <br />
 	<a href="javascript:fn_ajax()">ajax호출</a>
+
 </body>
 </html>

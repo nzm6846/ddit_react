@@ -4,75 +4,63 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-
-	#it{
-		width: 100px;
-		text-align: right;
-	}
-	.btn{
-		width: 32px;
-	}
-	#btn_call{
-		width: 60px
-	}
-	
+#it{
+	width: 100px;
+	text-align: right;
+}
+.btn{
+	width: 32px;
+}
+#btn_call{
+	width: 60px;
+}
 </style>
 <script type="text/javascript">
-
-document.addEventListener('DOMContentLoaded', function() {
-	objs = document.getElementsByClassName('btn');
-	obj_btn = document.getElementById('btn_call');
-	obj_it = document.getElementById('it');
+function myclick(e) {
+	var obj_it = document.getElementById("it");
+	var str_old = obj_it.value;
+	var str_new = e.target.value;
 	
-	code="";
-
-	for(obj of objs){
-		obj.addEventListener('click',function(){
-
-			code+=this.value;
-			
-			obj_it.value=code;
-		})
-	}
+	obj_it.value = str_old + str_new;
+}
+function mycall(){
+	var obj_it = document.getElementById("it");
+	var str_tel = obj_it.value;
+	alert("calling\n"+str_tel);
 	
-	obj_btn.addEventListener('click',function(){
-		alert(code + "전화거는중")
-		code="";
-	})
-	
-	
-});
+}
 </script>
 </head>
-<body>
-	<table border="1px">
-		<tr>
-			<td colspan="3">
-				<input type="text" id="it">
-			</td>
-		</tr>
-		<tr>
-			<td> <input type="button" value="1" class="btn"></td>
-			<td> <input type="button" value="2" class="btn"></td>
-			<td> <input type="button" value="3" class="btn"></td>
-		</tr>
-		<tr>
-			<td> <input type="button" value="4" class="btn"></td>
-			<td> <input type="button" value="5" class="btn"></td>
-			<td> <input type="button" value="6" class="btn"></td>
-		</tr>
-		<tr>
-			<td> <input type="button" value="7" class="btn"></td>
-			<td> <input type="button" value="8" class="btn"></td>
-			<td> <input type="button" value="9" class="btn"></td>
-		</tr>
-		<tr>
-			<td> <input type="button" value="0" class="btn"></td>
-			<td colspan="2">
-			 <input type="button" value="☏" id="btn_call">
-		 	</td>
 
-		</tr>
-	</table>
+<body>
+<table border="1px">
+	<tr>
+		<td colspan="3">
+			<input type="text" id="it" />
+		</td>
+	</tr>
+	<tr>
+		<td> <input type="button" value="1" class="btn" onclick="myclick(event)" /> </td>
+		<td> <input type="button" value="2" class="btn" onclick="myclick(event)" /> </td>
+		<td> <input type="button" value="3" class="btn" onclick="myclick(event)" /> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" value="4" class="btn" onclick="myclick(event)" /> </td>
+		<td> <input type="button" value="5" class="btn" onclick="myclick(event)" /> </td>
+		<td> <input type="button" value="6" class="btn" onclick="myclick(event)" /> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" value="7" class="btn" onclick="myclick(event)" /> </td>
+		<td> <input type="button" value="8" class="btn" onclick="myclick(event)" /> </td>
+		<td> <input type="button" value="9" class="btn" onclick="myclick(event)" /> </td>
+	</tr>
+	<tr>
+		<td> <input type="button" value="0" class="btn" onclick="myclick(event)" /> </td>
+		<td colspan="2"> 
+		<input type="button" value="☏" id="btn_call" onclick="mycall()" /> 
+		</td>
+	</tr>
+</table>
+
 </body>
 </html>

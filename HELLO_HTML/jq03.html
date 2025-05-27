@@ -2,52 +2,53 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
 <title>Insert title here</title>
 <style type="text/css">
-#it {
-	width: 30px;
-}
+	#it{
+		width: 40px;
+	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
-	function myclick() {
-		var obj_it = $('#it');
-		var obj_ta = $('#ta');
-
-		code ="";
-		obj_ta.val(code);
-		for(var i =1; i<=9; i++){
-			
-			code += obj_it.val()+"*"+i+"="+parseInt(obj_it.val()) * i +"\n";
-		}
-		
-		
-		obj_ta.val(code);
-
-	};
+function myclick(){
+	var dan = $("#it").val();
+	var idan = parseInt(dan);
 	
-	$(document).ready(function(){
-		$('#btn').on("click",function(){
-			myclick();
-			
-		})
-	})
+	
+	var txt = "";
+	
+	for(var i=1;i<=9;i++){
+		txt += dan+"*"+i+"="+(idan*i)+"\n";
+	}
+	
+	$("#ta").val(txt);
+	
+}
+$(document).ready(function(){
+	$("#btn").on("click", function(event) {  
+		myclick();
+	});
+});
 </script>
 </head>
 <body>
-	<table border="1">
-		<tr>
-			<td>출력단수</td>
-			<td><input type="text" id="it"></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="button" value="출력하기"
-				id='btn'></td>
-		</tr>
-		<tr>
-			<td colspan="2"><textarea id="ta" rows="13" cols="17"></textarea>
-			</td>
-		</tr>
-	</table>
+<table border="1px">
+	<tr>
+		<td>출력단수</td>
+		<td>
+			<input type="text" id="it" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="출력하기" id="btn" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<textarea id="ta" rows="13" cols="17"></textarea>
+		</td>
+	</tr>
+</table>
 </body>
 </html>

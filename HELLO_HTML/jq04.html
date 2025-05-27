@@ -3,62 +3,63 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>	
-<style type="text/css">
-#it{
-	width:30px;
-}
-</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script type="text/javascript">
 function myclick(){
+	var objs = document.getElementsByClassName("myspan");
 	
-	obj_span = $('.myspan');
-	arr = [];
-	while(arr.length <6){
-		random = Math.floor(Math.random()*45+1);
-
-		if(!arr.includes(random)){
-
-			arr.push(random);
-
-		}
-		
-	}
-	arr.sort((a,b)=>a-b);
-
-	for (let i = 0; i < obj_span.length; i++) {
-		obj_span[i].innerHTML = arr[i];
+	var arr45 = [
+		1,2,3,4,5,	6,7,8,9,10,
+		11,12,13,14,15,	16,17,18,19,20,
+		21,22,23,24,25,	26,27,28,29,30,
+		31,32,33,34,35,	36,37,38,39,40,
+		41,42,43,44,45
+	]; 
+	
+	for(var i=0;i<1000;i++){
+		var rnd = parseInt(Math.random()*45);
+		var temp = arr45[0];
+		arr45[0]=arr45[rnd];
+		arr45[rnd]=temp;		
 	}
 	
- 
-	
-			
-};
+	$(".myspan").eq(0).html(arr45[0]);
+	$(".myspan").eq(1).html(arr45[1]);
+	$(".myspan").eq(2).html(arr45[2]);
+	$(".myspan").eq(3).html(arr45[3]);
+	$(".myspan").eq(4).html(arr45[4]);
+	$(".myspan").eq(5).html(arr45[5]);
 
+	
+// 	objs[0].innerHTML = arr45[0];
+// 	objs[1].innerHTML = arr45[1];
+// 	objs[2].innerHTML = arr45[2];
+// 	objs[3].innerHTML = arr45[3];
+// 	objs[4].innerHTML = arr45[4];
+// 	objs[5].innerHTML = arr45[5];
+	
+}
 $(document).ready(function(){
-	$('#btn').on("click",function(){
-
+	$("#btn").on("click", function(event) {  
 		myclick();
-	})
-})
-
+	});
+});
 </script>
 </head>
-<body>
-	<table border="1px">
-		<tr>
-			<td><span class="myspan">__</span></td>
-			<td><span class="myspan">__</span></td>
-			<td><span class="myspan">__</span></td>
-			<td><span class="myspan">__</span></td>
-			<td><span class="myspan">__</span></td>
-			<td><span class="myspan">__</span></td>
-		</tr>
-		<tr>
-			<td colspan="6">
-				<button id="btn">로또생성하기</button>
-			</td>
-		</tr>
-	</table>
+<table border="1px">
+	<tr>
+		<td><span class="myspan">__</span></td>
+		<td><span class="myspan">__</span></td>
+		<td><span class="myspan">__</span></td>
+		<td><span class="myspan">__</span></td>
+		<td><span class="myspan">__</span></td>
+		<td><span class="myspan">__</span></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<button id="btn">로또생성하기</button>
+		</td>
+	</tr>
+</table>
 </body>
 </html>

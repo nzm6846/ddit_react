@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	FORW HTML<br/>
+	<%= a %><br/>
+	<%= arr %><br/>
+	
+<% arr.forEach(item => { %>
+    <%= item %><br/>
+<% }); %>
+
+<table border="1px">
+	<tr>
+		<td>사번</td>
+		<td>이름</td>
+		<td>성별</td>
+		<td>주소</td>
+	</tr>
+<% mylist.forEach(vo => { %>
+	<tr>
+		<td><%= vo.e_id %></td>
+		<td><%= vo.e_name %></td>
+		<td><%= vo.gen %></td>
+		<td><%= vo.addr %></td>
+	</tr>
+<% }); %>
+</table>
+
+
+
+</body>
+</html>

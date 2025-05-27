@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MyVar2 {
@@ -9,5 +8,6 @@ public class MyVar2 {
 		arr.add(3);
 		
 		System.out.println(arr.get(1));
+		
 	}
 }

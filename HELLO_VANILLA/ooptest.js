@@ -4,24 +4,22 @@ class Animal {
 		this.y = 0;
 	}
 
-
 	move(x, y) {
-		this.x += x;
-		this.y += y;
+		this.x = x;
+		this.y = y;
 	}
 }
 
 module.exports = Animal;
 
-if(require.main === module) { // 모듈을 이용해 노드js에서 자바 main같이 쓰는법
 
+
+if (require.main === module) {
 	const ani = new Animal();
-	console.log("x: " + ani.x);
-	console.log("y: " + ani.y);
-
-	ani.move(10, 10);
-	console.log("x: " + ani.x);
-	console.log("y: " + ani.y);
+	console.log("x:", ani.x);
+	console.log("y:", ani.y);
+	ani.move(5, 5);
+	console.log("x:", ani.x);
+	console.log("y:", ani.y);
 }
-
 

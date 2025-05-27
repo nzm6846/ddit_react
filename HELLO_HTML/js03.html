@@ -4,42 +4,47 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#it {
-	width: 30px;
-}
+	#it{
+		width: 40px;
+	}
 </style>
 <script type="text/javascript">
-	function myclick() {
-		var obj_it = document.getElementById('it');
-		var obj_ta = document.getElementById('ta');
-		console.log(obj_it.value);
-		code ="";
-		obj_ta.value=code;
-		for(var i =1; i<=9; i++){
-			
-			code += obj_it.value+"*"+i+"="+parseInt(obj_it.value) * i +"\n";
-		}
-		
-		
-		obj_ta.value = code;
-
-	};
+function myclick(){
+	var obj_it = document.querySelector("#it");
+	var obj_ta = document.querySelector("#ta");
+	var dan = obj_it.value;
+	var idan = parseInt(dan);
+	
+	
+	var txt = "";
+	
+	for(var i=1;i<=9;i++){
+		txt += dan+"*"+i+"="+(idan*i)+"\n";
+	}
+	
+	obj_ta.value = txt;
+	
+}
 </script>
 </head>
 <body>
-	<table border="1">
-		<tr>
-			<td>출력단수</td>
-			<td><input type="text" id="it"></td>
-		</tr>
-		<tr>
-			<td colspan="2"><input type="button" value="출력하기"
-				onclick='myclick()'></td>
-		</tr>
-		<tr>
-			<td colspan="2"><textarea id="ta" rows="13" cols="17"></textarea>
-			</td>
-		</tr>
-	</table>
+<table border="1px">
+	<tr>
+		<td>출력단수</td>
+		<td>
+			<input type="text" id="it" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" value="출력하기" onclick="myclick()" />
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<textarea id="ta" rows="13" cols="17"></textarea>
+		</td>
+	</tr>
+</table>
 </body>
 </html>

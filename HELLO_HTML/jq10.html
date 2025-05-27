@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#it{
+	width: 40px;
+}
+#mydiv{
+	height: 170px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+var com = "123";
+
+function fn_init(){
+	var arr9 = [
+		1,2,3,4,5,	6,7,8,9
+	]; 
+	
+	for(var i=0;i<1000;i++){
+		var rnd = parseInt(Math.random()*9);
+		var temp = arr9[0];
+		arr9[0]=arr9[rnd];
+		arr9[rnd]=temp;		
+	}
+	com = arr9[0]+""+arr9[1]+""+arr9[2];
+	console.log("com",com);
+}
+
+function getS(com,mine){
+	var ret = 0;
+	
+	var c1 = com.substring(0,1);
+	var c2 = com.substring(1,2);
+	var c3 = com.substring(2,3);
+	var m1 = mine.substring(0,1);
+	var m2 = mine.substring(1,2);
+	var m3 = mine.substring(2,3);
+	
+	if(c1==m1)	ret++;
+	if(c2==m2)	ret++;
+	if(c3==m3)	ret++;
+	
+	return ret;
+}
+
+function getB(com,mine){
+	var ret = 0;
+	
+	var c1 = com.substring(0,1);
+	var c2 = com.substring(1,2);
+	var c3 = com.substring(2,3);
+	var m1 = mine.substring(0,1);
+	var m2 = mine.substring(1,2);
+	var m3 = mine.substring(2,3);
+	
+	if(c1==m2 || c1==m3)	ret++;
+	if(c2==m1 || c2==m3)	ret++;
+	if(c3==m1 || c3==m2)	ret++;
+	
+	return ret;
+}
+
+function myclick(){
+
+	var mine = $("#it").val();
+	
+	var s = getS(com,mine);
+	var b = getB(com,mine);
+
+	var line = `${mine}\t${s}S${b}B<br/>`;
+	
+	console.log(line);
+	
+	$("#mydiv").append(line);
+	
+	$("#it").val("");
+	
+	if(s==3){
+		setTimeout("alert("+mine+"+''+'축하합니다.')") 
+	}
+	
+}
+$(document).ready(function(){
+	$("#btn").on("click", function(event) {  
+		myclick();
+	});
+});
+</script>
+</head>
+<body onload="fn_init()">
+<table border="1px">
+	<tr>
+		<td>맞출수</td>
+		<td>
+			<input type="text" id="it">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<input type="button" id="btn" value="맞춰보기">
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<div id="mydiv"></div>
+		</td>
+	</tr>
+</table>
+</body>
+</html>

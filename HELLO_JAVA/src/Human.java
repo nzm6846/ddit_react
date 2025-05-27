@@ -1,6 +1,5 @@
 
-public class Human extends Animal{
-	
+public class Human extends Animal {
 	String job = "student";
 	
 	public void chibbo(String job) {
@@ -13,7 +12,7 @@ public class Human extends Animal{
 		System.out.println(hum.y);
 		System.out.println(hum.job);
 		hum.move(100, 50);
-		hum.chibbo("programer");
+		hum.chibbo("programmer");
 		System.out.println(hum.x);
 		System.out.println(hum.y);
 		System.out.println(hum.job);

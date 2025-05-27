@@ -4,70 +4,66 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	#it_mine,#it_com,#it_result{
-		width: 30px;
-	}
+#it_mine,#it_com,#it_result{
+	width: 30px;
+}
 </style>
 <script type="text/javascript">
-	function myclick() {
-		var obj_itMine = document.getElementById('it_mine');
-		var obj_itCom = document.getElementById('it_com');
-		var obj_itResult = document.getElementById('it_result');
-		
-		var mine = obj_itMine.value;
-		var com = "";
-		var result = "";
-		
-		var random =Math.random();
-		
-		if(random > 0.5){
-			com = "홀";
-		}else{
-			com = "짝";
-		}
-		
-		if(mine === com){
-			result = "승리";
-		}else{
-			result = "패배";
-		}
-		
-		
-		
-		obj_itCom.value = com;
-		obj_itResult.value = result;
-		
-		console.log(mine,com,result);
-		console.log(obj_itMine.value,obj_itCom.value,obj_itResult.value);
-		
+function myclick(){
+	var obj_mine = document.getElementById("it_mine");
+	var obj_com = document.getElementById("it_com");
+	var obj_result = document.getElementById("it_result");
+	
+	var mine = obj_mine.value;
+	var com = "";
+	var result = "";
+	
+	var rnd = Math.random();
+	if(rnd>0.5){
+		com = "홀";
+	}else{
+		com = "짝";
 	}
+	
+	if(mine == com){
+		result = "이김";
+	} else {
+		result = "짐";
+	}
+	obj_com.value = com;
+	obj_result.value = result;
+	
+	
+	
+}
 </script>
 </head>
 <body>
-	<table border="1px">
-		<tr>
-			<td> 나 </td>
-			<td>
-				<input type="text" id="it_mine">
-			</td>
-		</tr>
-		<tr>
-			<td> 컴 </td>
-			<td>
-				<input type="text" id="it_com">
-			</td>
-		</tr>
-		<tr>
-			<td> 결과 </td>
-			<td>
-				<input type="text" id="it_result">
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2">
-				<input type="button" value="게임하기" onclick="myclick()">
-			</td>
-		</tr>
-	</table>
+<table border="1px">
+	<tr>
+		<td> 나 </td>
+		<td> 
+			<input type="text" id="it_mine"> 
+		</td>
+	</tr>
+	<tr>
+		<td> 컴 </td>
+		<td> 
+			<input type="text" id="it_com"> 
+		</td>
+	</tr>
+	<tr>
+		<td> 결과 </td>
+		<td> 
+			<input type="text" id="it_result"> 
+		</td>
+	</tr>
+	<tr>
+
+		<td colspan="2"> 
+			<input type="button" onclick="myclick()" value="게임하기"> 
+		</td>
+	</tr>
+</table>
 </body>
 </html>

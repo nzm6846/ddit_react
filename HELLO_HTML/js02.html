@@ -5,25 +5,22 @@
 <title>Insert title here</title>
 <style type="text/css">
 #it{
-	width:30px;
+	width: 30px;
 }
 </style>
 <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function() {
-    
-	var obj_it = document.getElementById('it');
-	var obj_btn = document.querySelector('button');
+function myclick(){
+	var obj_it = document.getElementById("it");
+	var a = obj_it.value;
+	var aa = parseInt(a);
+	aa++;
 	
-	obj_btn.addEventListener('click',()=>{
-		obj_it.value = parseInt(obj_it.value)+1;
-		console.log(obj_it.value)
-	})
-	
-});
+	obj_it.value = aa;
+}
 </script>
 </head>
 <body>
-<input type="text" id="it" value="100">
-<button>INCREASE</button>
+<input type="text" id="it" value="100"/>
+<button onclick="myclick()">INCREASE</button>
 </body>
 </html>

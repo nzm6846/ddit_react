@@ -1,16 +1,15 @@
+const Human = require('./ooptest2');
 
-const Human = require('./ooptest2.js');
 
-if(require.main === module) {
+
+if (require.main === module) {
 	const hum = new Human();
-	console.log("x: " + hum.x);
-	console.log("y: " + hum.y);
-	console.log(hum.job);
-	
+	console.log("job:", hum.job);
+	console.log("x:", hum.x);
+	console.log("y:", hum.y);
 	hum.move(5, 5);
-	hum.chibbo("programer");
-	
-	console.log("x: " + hum.x);
-	console.log("y: " + hum.y);
-	console.log(hum.job);
+	hum.chibbo("programmer");
+	console.log("job:", hum.job);
+	console.log("x:", hum.x);
+	console.log("y:", hum.y);
 }

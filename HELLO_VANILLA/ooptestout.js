@@ -1,15 +1,8 @@
+const Animal = require('./ooptest');
 
-
-const Animal = require('./ooptest.js');
-
-
-	
-	const ani = new Animal();
-	console.log("x: " + ani.x);
-	console.log("y: " + ani.y);
-	
-	ani.move(10, 10);
-	console.log("x: " + ani.x);
-	console.log("y: " + ani.y);
-
-
+const ani = new Animal();
+console.log("2x:",ani.x);
+console.log("2y:",ani.y);
+ani.move(5,5);
+console.log("2x:",ani.x);
+console.log("2y:",ani.y);
