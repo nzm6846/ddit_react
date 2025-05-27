@@ -1,16 +1,17 @@
 <script>
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+
+import Morning from "./lib/Morning.svelte";
+import Increase from "./lib/Increase.svelte";
+import Gugu from "./lib/Gugu.svelte";
+import Hol from "./lib/Hol.svelte";
 </script>
 
 <main>
 
-
-  <div class="card">
-    <Counter />
-  </div>
+<Hol/>
 
 </main>
 
+<style>
 
+</style>

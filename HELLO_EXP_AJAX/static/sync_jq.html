@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+	let a =0;
+	let b =0;
+	let c =0;
+
+	function fn_ajax(){
+	  $.ajax({
+		    url: '/one.ajax',
+		    async: false,
+		    method: 'get',
+		    dataType: 'json',
+		    success: function(response) {
+		      a = response.cnt;
+		      console.log("a",a);
+		    }
+	  });
+	  $.ajax({
+		    url: '/two.ajax',
+		    async: false,
+		    method: 'get',
+		    dataType: 'json',
+		    success: function(response) {
+		      b = response.cnt;
+		      console.log("b",b);
+		    }
+	  });
+	  
+	  c=a+b;
+	  console.log(c);
+
+	}
+</script>
+</head>
+<body>
+	SYNC<br>
+	<a href="javascript:fn_ajax()">ajax호출</a>
+</body>
+</html>

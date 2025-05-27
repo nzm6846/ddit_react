@@ -1,9 +1,11 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+
+import Gugu from "./components/Gugu.vue";
+import Hol from "./components/Hol.vue";
 </script>
 
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <Hol/>
 </template>
 
 <style scoped>

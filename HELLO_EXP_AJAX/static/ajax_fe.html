@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fn_ajax(){
+	fetch('/fetch.ajax',{
+		method: 'POST',
+		headers:{
+			'Content-Type':'application/json'
+		},
+	  	body: JSON.stringify({
+			menu : '깐풍기',
+	  	}),
+		
+	})
+	.then(res => res.json())
+	.then(data =>{
+		console.log(data);
+	})
+	.catch(error =>{
+		console.log(error.status);
+	})
+	
+
+}
+</script>
+</head>
+<body>
+	AJAX FE<br>
+	<a href="javascript:fn_ajax()">ajax호출</a>
+</body>
+</html>
