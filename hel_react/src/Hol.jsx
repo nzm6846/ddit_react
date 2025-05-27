@@ -38,7 +38,7 @@ const myClick = () =>{
                 <tr>
                     <td> 나</td>
                     <td>
-                        <input type="text" onChange={e=> setMine(e.target.value)}/>
+                        <input type="text" value={mine} onChange={e=> setMine(e.target.value)}/>
                     </td>
                 </tr>
                 <tr>
