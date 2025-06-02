@@ -1,15 +1,22 @@
 <script>
+import MyInside from "./lib/MyInside.svelte";
+import MyInput from "./lib/MyInput.svelte";
 
-import Morning from "./lib/Morning.svelte";
-import Increase from "./lib/Increase.svelte";
-import Gugu from "./lib/Gugu.svelte";
-import Hol from "./lib/Hol.svelte";
+let obj = null;
+let obj_mine = "hello";
+const myclick = () =>{
+    obj.value = "Good Bye";
+    obj_mine = "Good Bye";
+}
+
 </script>
 
 <main>
 
-<Hol/>
 
+    <input type="text" value="hello" bind:this={obj}/>
+    <MyInput bind:value={obj_mine}/>
+    <button onclick={myclick}>Change Text</button>
 </main>
 
 <style>
